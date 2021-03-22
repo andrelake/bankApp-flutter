@@ -3,4 +3,9 @@ class Transfer {
   final int accNumber;
 
   Transfer(this.value, this.accNumber);
+
+  @override
+  String toString() {
+    return 'Transfer{value: $value, accNumber: $accNumber}';
+  }
 }

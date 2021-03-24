@@ -1,24 +1,37 @@
 import 'package:flutter/material.dart';
 
 class InputText extends StatelessWidget {
-  final TextEditingController _controller;
-  final String _label;
-  final String _hint;
+  final TextEditingController controller;
+  final String label;
+  final String hint;
+  final String errorText;
+  final bool isObscureText;
+  final TextInputType inputType;
 
-  InputText(this._controller, this._label, this._hint);
+  InputText({this.controller,
+    this.label,
+    this.hint,
+    this.errorText,
+    this.isObscureText = false,
+    this.inputType = TextInputType.number
+  });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.fromLTRB(8, 8, 8, 0),
       child: TextField(
-        style: TextStyle(fontSize: 20),
-        controller: _controller,
-        decoration: InputDecoration(
-            labelText: _label,
-            hintText: _hint,
+        style: TextStyle(
+            fontSize: 20,
         ),
-        keyboardType: TextInputType.number,
+        controller: controller,
+        decoration: InputDecoration(
+            labelText: label,
+            hintText: hint,
+            errorText: errorText,
+        ),
+        keyboardType: inputType,
+        obscureText: isObscureText,
       ),
     );
   }

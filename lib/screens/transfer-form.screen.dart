@@ -32,14 +32,14 @@ class TransferFormState extends State<TransferForm> {
             child: Column(
               children: [
                 InputText(
-                    _accNumberInputController,
-                    _accNumberLabel,
-                    _accNumberHint
+                    controller: _accNumberInputController,
+                    label: _accNumberLabel,
+                    hint: _accNumberHint,
                 ),
                 InputText(
-                    _valueInputController,
-                    _valueLabel,
-                    _valueHint
+                    controller: _valueInputController,
+                    label: _valueLabel,
+                    hint: _valueHint,
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
